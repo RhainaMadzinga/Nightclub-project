@@ -1,0 +1,104 @@
+/**
+ * Write a description of class Nightclub here.
+ *
+ * @author (Rhaina Madzinga)
+ * @version (2023.10.22)
+ */
+public class NightClub
+{
+    // The maximum amount of clubbers allowed.
+    private int capacity;
+    // The current amount of clubbers.
+    private int occupancy;
+    // The name of the club.
+    private String clubName;
+
+    /**
+     * Create a Night Club that shows the given capacity, occupancy and name of club.
+     */
+    public NightClub(String nightclubName, int nightclubCapacity)
+    {
+        capacity = nightclubCapacity;
+        clubName = nightclubName;
+        occupancy = 0;
+    }
+
+    /**
+     * Return the name of a clubber.
+     */
+    public String getName()
+    {
+        return clubName;
+    }
+    /**
+     * Return the capacity of the club.
+     */
+    public int getCapacity()
+    {
+        return capacity;
+    }
+    /**
+     * Return the occupancy of the club at any given time.
+     */
+    public int getOccupancy()
+    {
+        return occupancy;
+    }
+    /**
+     * If the occupancy is less than the capacity than the occupnacy must be increased by 1.
+     * This is done to show someone new has entered the club
+     */
+    public void addOne()
+    {
+        if (occupancy < capacity) {
+            occupancy ++;
+        }else{
+            //stimulate the printing of the message.
+            System.out.println("The club is full");
+        }
+    }
+    /**
+     * Represents the number of clubbers leaving the club at a particular point
+     */
+    public int leaving (int numLeaving)
+    {
+        if (occupancy >= numLeaving) {
+            occupancy -=numLeaving;
+        }
+        else{System.out.println("there is an error in the number of clubbers.");
+            occupancy = 0;
+        }
+        {
+            return numLeaving;
+        }
+    }
+    /**
+     * Deternimes whether there is enough capacity in the club for a group to attend
+     */
+    public boolean isSpace(int numPeople)
+    {
+        if (numPeople <= 0) {
+            return false;
+        }
+        else{
+            if (numPeople <= capacity - occupancy){
+                return true;}
+            else{
+                return false;}
+        }
+    }
+    /**
+     * Print the details of the club
+     */
+    public void printDetails()
+    {
+        System.out.println(clubName+ ": " + occupancy + " clubbers. Capacity " + capacity+".");
+    }
+    /**
+     * print the details of the club.
+     */
+    public void about()
+    {
+        System.out.println("Nightclub written by rm828");
+    }
+}
