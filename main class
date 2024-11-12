@@ -1,0 +1,32 @@
+public class Main {
+    public static void main(String[] args) {
+        // new nightclub object
+
+        NightClub clubName = new NightClub("Club Code", 5);
+
+        System.out.println(clubName.getName());
+
+        System.out.println(clubName.getCapacity());
+
+        clubName.addOne();
+        clubName.addOne();
+        clubName.addOne();
+        clubName.addOne();
+        System.out.println(clubName.getOccupancy());
+        clubName.printDetails();
+        clubName.isSpace(1);
+        clubName.isSpace(3);
+
+        clubName.addOne();
+        clubName.addOne();
+
+        clubName.leaving(2);
+
+        clubName.getCapacity();
+
+        clubName.leaving(4);
+
+        clubName.getOccupancy();
+
+    }
+}
